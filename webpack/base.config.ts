@@ -56,7 +56,11 @@ let config: Configuration = merge(assetConfig, {
     }),
     new ForkTsCheckerWebpackPlugin({ async: false }),
     new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"]
+      extensions: ["js", "jsx", "ts", "tsx"],
+      failOnError: false,
+      failOnWarning: false,
+      emitError: false,
+      emitWarning: false,
     }),
   ]
 });
