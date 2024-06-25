@@ -12,7 +12,7 @@ export class Tracker extends Scene {
 
     create() {
         this.camera = this.cameras.main;
-        this.camera.setBackgroundColor(0x00ff00);
+        this.camera.setBackgroundColor(0xea7a55);
 
         this.background = this.add.image(512, 384, 'misc', 'bg');
         this.background.setAlpha(0.5);
