@@ -49,7 +49,7 @@ let config: Configuration = merge(assetConfig, {
     extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
-    new CopyPlugin({ patterns: [{ from: "public", to: "./" }] }),
+    new CopyPlugin({ patterns: [{ from: "public", to: "./" }, { from: "data", to: "./" }] }),
     new HtmlWebpackPlugin({
       title: 'OoTxMM ER Tracker',
       template: 'src/index.html',

@@ -1,3 +1,8 @@
+import Ajv from 'ajv';
+import * as erData from '../../../data/er.json';
+import * as layoutData from '../../../data/layout.json';
+import * as erSchema from '../../../definitions/er.schema.json';
+import * as layoutSchema from '../../../definitions/map-layout.schema.json';
 import { GameScene } from '../components/core/GameScene';
 
 export class Preloader extends GameScene {
@@ -26,8 +31,23 @@ export class Preloader extends GameScene {
     preload() {
         //  Load the assets for the game - Replace with your own assets
         this.load.atlas('er-icons', 'er-icons.png', 'er-icons.json');
+        this.load.atlas('er-maps', 'er-maps.png', 'er-maps.json');
         this.load.atlas('misc', 'misc.png', 'misc.json');
-        this.load.json('er-data', 'er-data.json');
+        let ajv = new Ajv();
+        ajv.addSchema(erSchema, "er");
+        ajv.addSchema(layoutSchema, "layout");
+        let valid = ajv.validate("er", erData);
+        this.load.json('er', 'er.json');
+        if (valid) {
+        } else {
+            console.log(`er.json errors: ${ajv.errorsText()}`);
+        }
+        valid = ajv.validate("layout", layoutData);
+        this.load.json('layout', 'layout.json');
+        if (valid) {
+            console.log(`layout.json errors: ${ajv.errorsText()}`);
+        } else {
+        }
     }
 
     create() {

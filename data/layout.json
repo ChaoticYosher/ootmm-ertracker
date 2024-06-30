@@ -1,0 +1,19 @@
+{
+    "inventory": {
+        "layouts": {
+            "inventoryPresetCrosskeys": [
+                [
+                    {
+                        "path": "wf-great-fairy",
+                        "location": "great-fairy-wf"
+                    },
+                    {
+                        "path": "gff",
+                        "location": "great-fairy-oot",
+                        "max": 6
+                    }
+                ]
+            ]
+        }
+    }
+}

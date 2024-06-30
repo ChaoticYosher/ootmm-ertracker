@@ -24,7 +24,10 @@
         "vite-dev": "vite --config vite/config.dev.mjs",
         "vite-build": "vite build --config vite/config.prod.mjs",
         "dev": "webpack serve --config webpack/dev.config.ts",
-        "build": "webpack --config webpack/prod.config.ts"
+        "build": "webpack --config webpack/prod.config.ts",
+        "gen-schema-er": "npx ts-json-schema-generator --path 'lib/TrackerTypes.ts' --type EntranceDataConfig -f './tsconfig.json' --id 'er' -o 'definitions/er.schema.json'",
+        "gen-schema-layout": "npx ts-json-schema-generator --path 'lib/TrackerTypes.ts' --type LayoutDataConfig -f './tsconfig.json' --id 'map-layout' -o 'definitions/map-layout.schema.json'",
+        "validate": "ts-node "
     },
     "dependencies": {
         "phaser": "^3.80.1",
@@ -46,6 +49,7 @@
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react": "^4.2.1",
+        "ajv": "^8.16.0",
         "babel-loader": "^9.1.3",
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^12.0.2",
@@ -57,6 +61,7 @@
         "fork-ts-checker-webpack-plugin": "^9.0.2",
         "html-webpack-plugin": "^5.6.0",
         "terser": "^5.28.1",
+        "ts-json-schema-generator": "^2.3.0",
         "ts-loader": "^9.5.1",
         "typescript": "^5.3.3",
         "vite": "^5.1.4",
