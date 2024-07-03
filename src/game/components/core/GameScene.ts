@@ -5,8 +5,17 @@ export class GameScene extends Phaser.Scene {
     protected dim: { x: number, y: number };
     protected views: { [key: string]: GameView };
 
+    public get width(): number {
+        return this.dim.x;
+    }
+
+    public get height(): number {
+        return this.dim.y;
+    }
+
     init(data: object) {
         this.dim = { x: this.game.config.width as number, y: this.game.config.height as number }
+        this.views = {}
     }
 
     addView<V extends GameView, C extends ViewConfig>(
@@ -23,4 +32,9 @@ export class GameScene extends Phaser.Scene {
         return newView;
     }
 
+    public update(time: number, delta: number): void {
+        Object.values(this.views).forEach((view: GameView) => {
+            view.update(time, delta)
+        });
+    }
 }

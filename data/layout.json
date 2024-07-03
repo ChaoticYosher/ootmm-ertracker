@@ -1,19 +1,44 @@
 {
     "inventory": {
+        "key": "trackerViewInventory",
+        "icons": {
+            "fairy-wf": {
+                "frame": "wf-great-fairy",
+                "scale": {
+                    "x": 0.5,
+                    "y": 0.5
+                },
+                "tint": {
+                    "tl": "0xea7a55"
+                }
+            },
+            "fairy-oot": {
+                "frame": "gff",
+                "alpha": 0.69
+            }
+        },
         "layouts": {
             "inventoryPresetCrosskeys": [
                 [
-                    {
-                        "path": "wf-great-fairy",
-                        "location": "great-fairy-wf"
-                    },
-                    {
-                        "path": "gff",
-                        "location": "great-fairy-oot",
-                        "max": 6
-                    }
+                    "fairy-wf",
+                    "fairy-oot:6"
                 ]
             ]
+        },
+        "defaultLayout": "inventoryPresetCrosskeys",
+        "inventoryLocation": {
+            "position": {
+                "x": 0.5,
+                "y": 0.98,
+                "w": 0.94,
+                "h": 0.21
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 1
+            }
         }
-    }
+    },
+    "map": {},
+    "summaryMap": {}
 }

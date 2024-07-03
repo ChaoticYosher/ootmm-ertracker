@@ -1,24 +1,22 @@
 import { EventBus } from '../EventBus';
 import { GameScene } from '../components/core/GameScene';
 import { LayoutDataConfig } from '../../../lib/TrackerTypes';
+import { EntranceDataConfig } from '../../../lib/EntranceTypes';
 
-export class Tracker extends GameScene {
-    camera: Phaser.Cameras.Scene2D.Camera;
-    background: Phaser.GameObjects.Image;
-    gameText: Phaser.GameObjects.Text;
+export class MapEditor extends GameScene {
     layoutConfig: LayoutDataConfig;
+    entranceConfig: EntranceDataConfig;
 
     constructor() {
-        super('Tracker');
+        super('MapEditor');
     }
 
     preload() {
         this.layoutConfig = this.cache.json.get("layout");
+        this.entranceConfig = this.cache.json.get("er");
     }
 
     create(data: object) {
-        this.camera = this.cameras.main;
-        console.log(this.layoutConfig);
         EventBus.emit('current-scene-ready', this);
     }
 

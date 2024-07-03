@@ -19,10 +19,10 @@ export interface BoxConfig {
 }
 
 export interface TintConfig {
-  bl?: number;
-  br?: number;
-  tl?: number;
-  tr?: number;
+  bl?: number | string;
+  br?: number | string;
+  tl?: number | string;
+  tr?: number | string;
 }
 
 export interface Element {
@@ -33,6 +33,7 @@ export interface SpriteConfig extends ElementConfig {
   texture: string;
   frame?: string;
   tint?: TintConfig;
+  alpha?: number;
 }
 
 export interface TextConfig
@@ -46,12 +47,7 @@ export interface TextConfig
 
 export interface ViewConfig {
   key: string;
-  dimension?: {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-  };
+  dimension?: BoxConfig;
 }
 
 export interface ButtonConfig extends ElementConfig {

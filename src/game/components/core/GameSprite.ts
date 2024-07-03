@@ -16,7 +16,12 @@ export class GameSprite extends Phaser.GameObjects.Sprite {
     );
 
     if (data.tint) {
-      this.setTint(data.tint.tl, data.tint.tr, data.tint.bl, data.tint.br);
+      this.setTint(
+        data.tint.tl === undefined ? undefined : Number(data.tint.tl),
+        data.tint.tr === undefined ? undefined : Number(data.tint.tr),
+        data.tint.bl === undefined ? undefined : Number(data.tint.bl),
+        data.tint.br === undefined ? undefined : Number(data.tint.br)
+      );
     }
 
     if (data.scale) {
