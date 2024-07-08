@@ -1,4 +1,4 @@
-import { BoxConfig, SpriteConfig, ViewConfig, XYPair } from "../src/game/components/core/dataTypes";
+import { BoxConfig, ButtonConfig, CounterConfig, SpriteConfig, ViewConfig, XYPair } from "../src/game/components/core/dataTypes";
 
 export enum TrackerView {
     Inventory = "trackerViewInventory",
@@ -12,17 +12,26 @@ export type InventorySlotConfig = Partial<SpriteConfig> & {
 
 export enum InventoryPreset {
     CrossKeys = "inventoryPresetCrosskeys",
+    Debug = "inventoryPresetDebug",
 }
 
 export type InventoryViewConfig = ViewConfig & {
     icons: { [key: string]: InventorySlotConfig };
     layouts: Record<InventoryPreset, string[][]>;
     defaultLayout: string;
-    inventoryLocation: {
+    location: {
         position: BoxConfig;
         anchor: XYPair;
     };
+    spacing: {
+        min: XYPair;
+        max: XYPair;
+    }
 };
+
+export type InventoryButtonConfig = ButtonConfig & {
+    counter?: CounterConfig
+}
 
 export type MainMapViewConfig = {};
 

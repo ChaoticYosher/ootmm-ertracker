@@ -20,6 +20,7 @@ export class Tracker extends GameScene {
 
     create(data: object) {
         this.inventoryView = this.addView(InventoryView, this.layoutConfig.inventory)
+        this.inventoryView.init();
         EventBus.emit('current-scene-ready', this);
     }
 

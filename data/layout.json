@@ -5,11 +5,29 @@
             "fairy-wf": {
                 "frame": "wf-great-fairy",
                 "scale": {
-                    "x": 0.5,
-                    "y": 0.5
-                },
-                "tint": {
-                    "tl": "0xea7a55"
+                    "x": 1.2,
+                    "y": 1.2
+                }
+            },
+            "fairy-sh": {
+                "frame": "sh-great-fairy",
+                "scale": {
+                    "x": 1.2,
+                    "y": 1.2
+                }
+            },
+            "fairy-gb": {
+                "frame": "gb-great-fairy",
+                "scale": {
+                    "x": 1.2,
+                    "y": 1.2
+                }
+            },
+            "fairy-st": {
+                "frame": "st-great-fairy",
+                "scale": {
+                    "x": 1.2,
+                    "y": 1.2
                 }
             },
             "fairy-oot": {
@@ -18,24 +36,77 @@
             }
         },
         "layouts": {
+            "inventoryPresetDebug": [
+                [
+                    "fairy-wf",
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-st"
+                ],
+                [
+                    "fairy-wf",
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-st",
+                    "fairy-wf",
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-st"
+                ],
+                [
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-st",
+                    "fairy-wf",
+                    "fairy-sh",
+                    "fairy-st",
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-st"
+                ],
+                [
+                    "fairy-wf",
+                    "fairy-sh",
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-gb",
+                    "fairy-gb",
+                    "fairy-st",
+                    "fairy-st",
+                    "fairy-st",
+                    "fairy-st"
+                ]
+            ],
             "inventoryPresetCrosskeys": [
                 [
                     "fairy-wf",
-                    "fairy-oot:6"
+                    "fairy-sh",
+                    "fairy-gb",
+                    "fairy-st"
                 ]
             ]
         },
-        "defaultLayout": "inventoryPresetCrosskeys",
-        "inventoryLocation": {
+        "defaultLayout": "inventoryPresetDebug",
+        "location": {
             "position": {
                 "x": 0.5,
                 "y": 0.98,
                 "w": 0.94,
-                "h": 0.21
+                "h": 0.32
             },
             "anchor": {
                 "x": 0.5,
                 "y": 1
+            }
+        },
+        "spacing": {
+            "min": {
+                "x": 32,
+                "y": 32
+            },
+            "max": {
+                "x": 120,
+                "y": 120
             }
         }
     },

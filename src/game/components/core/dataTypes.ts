@@ -55,6 +55,12 @@ export interface ButtonConfig extends ElementConfig {
   text?: TextConfig;
 }
 
+export type CounterConfig = {
+  background?: SpriteConfig;
+  text: TextConfig;
+  counterType?: 'increment' | 'decrement';
+}
+
 export interface GameEventData {
   name: string;
   callback: Function;

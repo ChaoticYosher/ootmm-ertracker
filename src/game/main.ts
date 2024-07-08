@@ -14,7 +14,7 @@ const config: Phaser.Types.Core.GameConfig = {
     backgroundColor: '#ea7a55',
     physics: {
         arcade: {
-            debug: process.env.NODE_ENV === 'development',
+            debug: process.env.NODE_ENV === 'development' && false,
         },
     },
     scene: [

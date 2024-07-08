@@ -3,11 +3,11 @@ import { Configuration } from "webpack";
 const WebpackFreeTexPacker: any = require("webpack-free-tex-packer");
 
 let sources = [
-    ["assets/er-icons/oot", "assets/er-icons/mm"],
-    ["assets/er-maps/oot", "assets/er-maps/mm"],
-    ["assets"],
+    ["er-icons/oot", "er-icons/mm"],
+    ["er-maps/oot", "er-maps/mm"],
+    ["misc"],
 ];
-sources.map(sourceList => sourceList.map(source => path.resolve(__dirname, source)))
+sources = sources.map(sourceList => sourceList.map(source => path.join(__dirname, "..", "assets", source)))
 
 let packOptions = [
     {
@@ -34,7 +34,8 @@ let packOptions = [
         allowTrim: true,
         exporter: "Phaser3",
         removeFileExtension: true,
-        prependFolderName: false
+        prependFolderName: false,
+        scale: 0.5
     },
     {
         textureName: "misc",
